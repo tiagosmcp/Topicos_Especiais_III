@@ -6,8 +6,8 @@ POST {{ base_url }}/api/pessoas
 Content-Type: application/json
 
 {
-  "nome": "Rafael",
-  "idade": 34
+  "nome": "Luccas",
+  "idade": 21
 }
 
 ### Listar todas as pessoas
