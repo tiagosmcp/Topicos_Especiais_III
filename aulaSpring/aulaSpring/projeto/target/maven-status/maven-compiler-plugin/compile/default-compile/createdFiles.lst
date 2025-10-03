@@ -1,0 +1,14 @@
+com/example/projeto/model/Pessoa.class
+com/example/projeto/model/Produto.class
+com/example/projeto/repository/PessoaRepository.class
+com/example/projeto/controller/ProdutoController.class
+com/example/projeto/controller/PessoaController.class
+com/example/projeto/controller/MensagemController.class
+com/example/projeto/controller/PessoaWebController.class
+com/example/projeto/repository/MensagemRepository.class
+com/example/projeto/service/MensagemService.class
+com/example/projeto/PagController.class
+com/example/projeto/ProjetoApplication.class
+com/example/projeto/service/ProdutoService.class
+com/example/projeto/service/PessoaService.class
+com/example/projeto/repository/ProdutoRepository.class
