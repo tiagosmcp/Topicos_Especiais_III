@@ -1,8 +1,6 @@
 const BASE_URL =  'https://effective-xylophone-jppggq7r7gvhq6qv-8080.app.github.dev'
 
 
-/*Se leu é viado*/ 
-
 export const buscaPessoa = async() => {
     const response = await fetch(`${BASE_URL}/api/pessoas`,{
         method: 'GET',
@@ -19,21 +17,12 @@ export const buscaPessoa = async() => {
     return await response.json()
 } 
 
-export const getPessoaById = async (id) => {
-  const response = await fetch(`${BASE_URL}/api/pessoas/${id}`);
-
-  if (!response.ok) {
-    throw new Error('Pessoa não encontrada.');
-  }
-
-  return await response.json();
-};
-
 export const novaPessoa = async(dataPessoa) =>{
     const response = await fetch(`${BASE_URL}/api/pessoas`,{
         method:'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
         },
         body: JSON.stringify(dataPessoa),
     });
@@ -45,9 +34,19 @@ export const novaPessoa = async(dataPessoa) =>{
 }
 
 export const deletePessoa = async(id) => {
-    const response = await fetch(`${BASE_URL}/api/pessoas/${id}`);
+
+    const response = await fetch(`${BASE_URL}/api/pessoas/${id}`,{
+        method:'DELETE',
+        headers:{
+            'Content-Type':'application/json',
+            'Access-Control-Allow-Origin': '*',
+        }
+
+    });
+
     if (!response.ok) {
         throw new Error('Pessoa não encontrada.');
     }
+
     return await response.json();
 }

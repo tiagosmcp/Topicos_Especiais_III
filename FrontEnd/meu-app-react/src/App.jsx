@@ -1,22 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
-
-// --- Serviços de Dados (Mocks) ---
-const novaPessoa = async (data) => {
-  console.log("POST/PUT: Nova Pessoa", data);
-  return { id: Date.now(), ...data };
-};
-const buscaPessoa = async () => {
-  await new Promise((r) => setTimeout(r, 500));
-  return [
-    { id: "a1", nome: "Ana Souza", idade: 28 },
-    { id: "b2", nome: "Bruno Costa", idade: 35 },
-    { id: "c3", nome: "Carla Lima", idade: 22 },
-  ];
-};
-const updatePessoa = async (id, data) =>
-  console.log("PUT: Atualizar Pessoa", id, data);
-const deletePessoa = async (id) => console.log("DELETE: Deletar Pessoa", id);
+import {deletePessoa,novaPessoa,buscaPessoa} from './services/buscaDados'
 
 // --- Hook Customizado ---
 const useDataFetcher = (fetchFn) => {
@@ -134,9 +118,6 @@ function App() {
                   <td>{p.nome}</td>
                   <td>{p.idade}</td>
                   <td>
-                    <Button variant="secondary" onClick={() => handleOpenModal(p)}>
-                      Editar
-                    </Button>
                     <Button variant="danger" onClick={() => handleDelete(p.id)}>
                       Excluir
                     </Button>
