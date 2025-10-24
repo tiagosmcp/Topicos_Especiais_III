@@ -16,7 +16,7 @@ export const buscaPessoa = async() => {
 
     return await response.json()
 } 
-
+ 
 export const novaPessoa = async(dataPessoa) =>{
     const response = await fetch(`${BASE_URL}/api/pessoas`,{
         method:'POST',

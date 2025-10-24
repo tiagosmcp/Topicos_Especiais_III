@@ -27,6 +27,8 @@ const useDataFetcher = (fetchFn) => {
   return { data, loading, error, setData, refetch };
 };
 
+
+
 // --- Botão ---
 const Button = ({ children, onClick, type = "button", variant = "primary" }) => {
   return (
